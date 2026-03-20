@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800 transition duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed w-full z-10 dark:bg-gray-900 dark:text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600">MyBlog</h1>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-6 font-medium">
+        <li><a href="#" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#" class="hover:text-blue-500">Articles</a></li>
+        <li><a href="#" class="hover:text-blue-500">About</a></li>
+        <li><a href="#" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button class="md:hidden" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <ul class="flex flex-col gap-3">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-10 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+    <h2 class="text-3xl md:text-5xl font-bold">Welcome to My Blog</h2>
+    <p class="mt-4">Read amazing articles on web development</p>
+  </section>
+
+  <!-- Main -->
+  <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+
+    <!-- Blog Grid -->
+    <div class="md:col-span-2 grid sm:grid-cols-2 gap-6">
+
+      <!-- Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x300/?coding">
+        <div class="p-5">
+          <h3 class="font-bold">Tailwind Tips</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Learn modern CSS fast.</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x300/?tech">
+        <div class="p-5">
+          <h3 class="font-bold">UI Design</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Make beautiful UI.</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x300/?programming">
+        <div class="p-5">
+          <h3 class="font-bold">JavaScript Basics</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Start JS journey.</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+        <img src="https://source.unsplash.com/400x300/?developer">
+        <div class="p-5">
+          <h3 class="font-bold">Web Trends</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Latest trends.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="space-y-6">
+
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow">
+        <input type="text" placeholder="Search..." class="w-full p-2 border rounded">
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow">
+        <h4 class="mb-3">Categories</h4>
+        <ul class="space-y-2 text-sm">
+          <li>Web Dev</li>
+          <li>Programming</li>
+          <li>Design</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
+      <div>
+        <h2 class="font-bold">MyBlog</h2>
+        <p class="text-sm">Sharing knowledge daily.</p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Links</h3>
+        <ul class="text-sm space-y-1">
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Follow</h3>
+        <div class="flex gap-4 justify-center md:justify-start mt-2">
+          <span>🌐</span>
+          <span>🐦</span>
+          <span>📘</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+</html>
